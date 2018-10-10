@@ -34,7 +34,7 @@ echo "enabled permanent inode cache frequency value..."
 
 echo "setting up mariadb repo..."
 sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8
-sudo add-apt-repository 'deb [arch=amd64,i386,ppc64el] http://mirror.jmu.edu/pub/mariadb/repo/10.2/ubuntu xenial main'
+sudo add-apt-repository 'deb [arch=amd64,arm64,ppc64el] http://ftp.utexas.edu/mariadb/repo/10.3/ubuntu bionic main'
 sudo apt update -y
 
 echo "installing mariadb..."
@@ -45,4 +45,4 @@ sudo systemctl start mariadb.service
 sudo systemctl enable mariadb.service
 
 echo "start mariadb secure installation..."
-sudo /usr/bin/mysql_secure_installation
+sudo mysql_secure_installation
