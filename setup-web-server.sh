@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "updating dependencies & packages..."
 sudo apt-get update -y && sudo apt-get dist-upgrade -y
-sudo apt-get install -y python-software-properties
+sudo apt-get install -y software-properties-common
 
 echo "adding ppa for latest stable version of nginx..."
 sudo add-apt-repository -y ppa:nginx/stable
