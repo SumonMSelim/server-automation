@@ -22,7 +22,7 @@ echo "installing php and php packages..."
 sudo apt-get install -y php${phpv} php${phpv}-fpm php${phpv}-cli php${phpv}-gd
 sudo apt-get install -y php${phpv}-common php${phpv}-curl php${phpv}-mbstring
 sudo apt-get install -y php${phpv}-zip php${phpv}-xml php${phpv}-imap
-sudo apt-get install -y php${phpv}-mysql php${phpv}-mcrypt php${phpv}-intl
+sudo apt-get install -y php${phpv}-mysql php${phpv}-dev php${phpv}-intl php-pear
 
 echo "$(php -v)"
 
