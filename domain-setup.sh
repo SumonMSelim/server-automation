@@ -15,7 +15,7 @@ select php_version in "${php_versions[@]}"; do
 done
 
 echo "Select a configuration..."
-configurations=( default both default-ssl both-ssl )
+configurations=( www-and-non-www www-and-non-www-ssl www-or-non-www www-or-non-www-ssl )
 
 select config in "${configurations[@]}"; do
     echo "You have chosen $config"
@@ -23,7 +23,7 @@ select config in "${configurations[@]}"; do
 done
 
 echo "Creating nginx virtual host file..."
-sudo cp ${PWD}/nginx/${config} /etc/nginx/sites-available/${domain}.conf
+sudo cp ${PWD}/nginx/${config}.conf /etc/nginx/sites-available/${domain}.conf
 
 sudo sed -i "s%version%${php_version}%g" /etc/nginx/sites-available/${domain}.conf
 echo "PHP version set..."
