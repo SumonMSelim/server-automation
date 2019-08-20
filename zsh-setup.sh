@@ -9,6 +9,6 @@ sh install.sh
 
 echo "Preparing default zsh configuration..."
 truncate --size=0 ~/.zshrc
-cat ${PWD}/oh-my-zsh/.zshrc.sample >> ~/.zshrc
+cat ${PWD}/oh-my-zsh/zshrc.sample >> ~/.zshrc
 
 source ~/.zshrc
