@@ -37,10 +37,10 @@ sudo add-apt-repository 'deb [arch=amd64,arm64,ppc64el] http://sfo1.mirrors.digi
 sudo apt update -y
 
 echo "Installing MariaDB server..."
-sudo apt-get install mariadb-server
+sudo apt-get install mariadb-server -y
 
 echo "Installing MariaDB clients and client libraries"
-sudo apt-get install mariadb-client libmariadb3
+sudo apt-get install mariadb-client libmariadb3 -y
 
 echo "Start and enable MariaDB service..."
 sudo systemctl enable --now mariadb
