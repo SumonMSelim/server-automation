@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 echo "Adding ppa for Let's Encrypt certbot..."
 sudo add-apt-repository -y ppa:certbot/certbot
 sudo apt-get update -y
@@ -6,5 +7,5 @@ sudo apt-get update -y
 echo "Installing certbot..."
 sudo apt-get install -y certbot
 
-echo "Generate DH parameters with OpenSSL"
+echo "Generate DH parameters with OpenSSL..."
 sudo openssl dhparam -out /etc/ssl/certs/dhparam.pem 4096

@@ -1,0 +1,46 @@
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
+# Set name of the theme to load
+ZSH_THEME="agnoster"
+
+# Enable command auto-correction.
+ENABLE_CORRECTION="true"
+
+# Display red dots whilst waiting for completion.
+COMPLETION_WAITING_DOTS="true"
+
+# Disable marking untracked files under VCS as dirty.
+DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Command execution timestamp shown in the history command output.
+HIST_STAMPS="dd.mm.yyyy"
+
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load?
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+export MANPATH="/usr/local/man:$MANPATH"
+
+# Set your language environment
+export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='nano'
+else
+  export EDITOR='nano'
+fi
+
+# Compilation flags
+export ARCHFLAGS="-arch x86_64"
+
+# Set personal aliases
+alias zshconfig="nano ~/.zshrc"
+alias update="sudo apt update -y && sudo apt dist-upgrade -y && sudo apt autoremove"
+alias nginxr="sudo nginx -t && sudo service nginx restart"
+alias webroot="cd /var/www/html"
