@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-sh ./bootstrap.sh
+sh ./update.sh
 
 echo "Adding swap memory..."
 sudo fallocate -l 4G /swapfile

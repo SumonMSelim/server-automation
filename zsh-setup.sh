@@ -10,6 +10,7 @@ sh install.sh
 echo "Preparing default zsh configuration..."
 truncate --size=0 ${HOME}/.zshrc
 cat ${PWD}/oh-my-zsh/zshrc.example >> ${HOME}/.zshrc
+rm -f install.sh
 
 echo "Set default shell to zsh"
 chsh -s /bin/zsh
