@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+echo "Note: You will need to deploy a DNS TXT record to your domain."
+
 echo "Enter your domain names (domain.com)..."
 read domain
 

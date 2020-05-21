@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
 
-echo "Insert your domain address (without www)..."
+echo "Insert your domain address..."
 read domain
 
 echo "Insert directory path where the domain is pointed..."
 read root_path
+
+echo "Insert your SSL keys file name (collected from certbot)..."
+read ssl_key_name
 
 echo "Select the active PHP version..."
 php_versions=( 7.1 7.2 7.3 7.4 )
@@ -15,7 +18,7 @@ select php_version in "${php_versions[@]}"; do
 done
 
 echo "Select a configuration..."
-configurations=( www-and-non-www www-and-non-www-ssl www-or-non-www www-or-non-www-ssl )
+configurations=( domain-with-www domain-without-www )
 
 select config in "${configurations[@]}"; do
     echo "You have chosen $config"
@@ -29,15 +32,18 @@ sudo sed -i "s%version%${php_version}%g" /etc/nginx/sites-available/${domain}.co
 echo "PHP version set..."
 
 sudo sed -i "s%domain%${domain}%g" /etc/nginx/sites-available/${domain}.conf
-echo "Server name configured..."
+echo "Domain name set..."
 
 sudo sed -i "s%root_path%${root_path}%g" /etc/nginx/sites-available/${domain}.conf
-echo "Root path configured..."
+echo "Root path set..."
 
-echo "Creating symbolic link..."
+sudo sed -i "s%ssl_key_name%${ssl_key_name}%g" /etc/nginx/sites-available/${domain}.conf
+echo "SSL set..."
+
 if [[ ! -e /etc/nginx/sites-enabled/${domain}.conf ]]
 then
     sudo ln -s /etc/nginx/sites-available/${domain}.conf /etc/nginx/sites-enabled/${domain}.conf
+    echo "Symbolic link created..."
 fi
 
 echo "Checking configuration..."
