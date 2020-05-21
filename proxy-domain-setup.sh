@@ -9,8 +9,16 @@ read proxy_pass_address
 echo "Insert your SSL keys file name (collected from certbot)..."
 read ssl_key_name
 
+echo "Select a configuration..."
+configurations=( proxy-with-www proxy-without-www )
+
+select config in "${configurations[@]}"; do
+    echo "You have chosen $config"
+    break
+done
+
 echo "Creating nginx virtual host file..."
-sudo cp ${PWD}/nginx/proxy.conf /etc/nginx/sites-available/${domain}.conf
+sudo cp ${PWD}/nginx/${config}.conf /etc/nginx/sites-available/${domain}.conf
 
 sudo sed -i "s%domain%${domain}%g" /etc/nginx/sites-available/${domain}.conf
 echo "Domain name set..."
