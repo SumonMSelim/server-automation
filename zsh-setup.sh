@@ -8,7 +8,10 @@ curl -Lo install.sh https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 sh install.sh
 
 echo "Preparing default zsh configuration..."
-truncate --size=0 ~/.zshrc
-cat ${PWD}/oh-my-zsh/zshrc.example >> ~/.zshrc
+truncate --size=0 ${HOME}/.zshrc
+cat ${PWD}/oh-my-zsh/zshrc.example >> ${HOME}/.zshrc
+
+echo "Set default shell to zsh"
+chsh -s /bin/zsh
 
 source ~/.zshrc
