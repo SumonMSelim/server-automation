@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-echo "Adding ppa for latest stable version of nginx..."
-sudo add-apt-repository -y ppa:nginx/stable
 sh ./update.sh
 
 echo "Installing nginx..."
