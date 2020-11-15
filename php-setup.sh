@@ -5,7 +5,7 @@ sudo add-apt-repository -y ppa:ondrej/php
 sh ./update.sh
 
 echo "Enter the PHP version you want to install..."
-php_versions=( 7.1 7.2 7.3 7.4 )
+php_versions=( 7.3 7.4 )
 
 select php_version in "${php_versions[@]}"; do
     echo "You have chosen $php_version"
