@@ -6,4 +6,4 @@ sudo apt upgrade -y
 sudo apt dist-upgrade -y
 sudo apt autoremove -y
 
-sudo apt-get install -y software-properties-common zip unzip
+sudo apt-get install -y curl git software-properties-common unzip zip 
