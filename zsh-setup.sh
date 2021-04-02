@@ -14,3 +14,6 @@ rm -f install.sh
 
 echo "Set default shell to zsh"
 chsh -s /bin/zsh
+
+echo "Run zsh"
+zsh -l
