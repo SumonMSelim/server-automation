@@ -29,21 +29,8 @@ echo "Enabling permanent inode cache frequency value..."
 echo "vm.vfs_cache_pressure = 50" >> /etc/sysctl.conf
 echo "Enabled permanent inode cache frequency value..."
 
-echo "Importing MariaDB gpg key..."
-sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8
-
-echo "Adding the apt repository..."
-sudo add-apt-repository 'deb [arch=amd64,arm64,ppc64el] http://sfo1.mirrors.digitalocean.com/mariadb/repo/10.4/ubuntu bionic main'
-sudo apt update -y
-
-echo "Installing MariaDB server..."
-sudo apt-get install mariadb-server -y
-
-echo "Installing MariaDB clients and client libraries"
-sudo apt-get install mariadb-client libmariadb3 -y
-
-echo "Start and enable MariaDB service..."
-sudo systemctl enable --now mariadb
+echo "Installing MySQL 8 server..."
+sudo apt-get install mysql-server -y
 
 echo "Start MariaDB secure installation..."
 sudo mysql_secure_installation
