@@ -8,4 +8,4 @@ sudo apt install postgresql postgresql-contrib
 echo "Resetting default password to 'postgres'"
 sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'postgres';"
 
-echo 'Installation completed.....'
+echo "Installation completed....."
