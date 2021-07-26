@@ -16,7 +16,7 @@ echo "Installing PHP ${php_version}..."
 sudo apt-get install -y php${php_version} php${php_version}-fpm php${php_version}-cli php${php_version}-gd
 sudo apt-get install -y php${php_version}-common php${php_version}-curl php${php_version}-mbstring
 sudo apt-get install -y php${php_version}-zip php${php_version}-xml php${php_version}-imap
-sudo apt-get install -y php${php_version}-mysql php${php_version}-dev php${php_version}-intl php-pear
+sudo apt-get install -y php${php_version}-mysql php${php_version}-redis php${php_version}-dev php${php_version}-intl php-pear
 echo "$(php -v)"
 
 echo "Installing Composer..."
