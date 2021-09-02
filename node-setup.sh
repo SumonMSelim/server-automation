@@ -14,5 +14,5 @@ echo "Installing Node ${node_version}..."
 curl -sL https://deb.nodesource.com/setup_${node_version}.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
-echo "$(node -v)"
-echo "$(npm -v)"
+echo "Node $(node -v)"
+echo "npm v$(npm -v)"
