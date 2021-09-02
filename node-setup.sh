@@ -2,25 +2,17 @@
 
 sh ./update.sh
 
-echo "Installing lts/fermium (node and npm) using nvm..."
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
-source ~/.nvm/nvm.sh
+echo "Enter the Node version you want to install..."
+node_versions=( 14 16 )
 
-nvm install lts/fermium
+select node_version in "${node_versions[@]}"; do
+    echo "You have chosen $node_version"
+    break
+done
 
+echo "Installing Node ${node_version}..."
+curl -sL https://deb.nodesource.com/setup_${node_version}.x | sudo -E zsh -
+sudo apt-get install -y nodejs
 
-echo "Installing yarn..."
-curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-
-sh ./update.sh
-sudo apt install -y --no-install-recommends yarn
-
-echo "Installing pm2..."
-npm install pm2 -g
-
-echo 'Installation completed.....'
-
-echo "Node version - $(node -v)"
-echo "Npm version - $(npm -v)"
-echo "Yarn version - $(yarn -v)"
+echo "$(node -v)"
+echo "$(npm -v)"
