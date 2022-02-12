@@ -10,7 +10,7 @@ echo "Insert your SSL keys file name (collected from certbot)..."
 read ssl_key_name
 
 echo "Select the active PHP version..."
-php_versions=( 7.4 8.0 )
+php_versions=( 8.0 8.1 )
 
 select php_version in "${php_versions[@]}"; do
     echo "You have chosen $php_version"
@@ -18,7 +18,7 @@ select php_version in "${php_versions[@]}"; do
 done
 
 echo "Select a configuration..."
-configurations=( domain-with-www domain-without-www )
+configurations=( domain-with-www domain-without-www www-domain-with-cloudflare non-www-domain-with-cloudflare )
 
 select config in "${configurations[@]}"; do
     echo "You have chosen $config"
