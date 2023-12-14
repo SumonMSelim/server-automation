@@ -10,7 +10,7 @@ echo "Insert your SSL keys file name (collected from certbot)..."
 read ssl_key_name
 
 echo "Select the active PHP version..."
-php_versions=( 8.0 8.1 )
+php_versions=( 8.1 8.2 8.3 8.4 )
 
 select php_version in "${php_versions[@]}"; do
     echo "You have chosen $php_version"
